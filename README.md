@@ -1,12 +1,141 @@
-# Epi-Graphical-Template-C
+# Wolf3D 🎮
 
-Before doing anything you have to do ```make start``` to modified the name of gitignore.txt to .gitignore to avoid any problem with git and make gitignore work fine. Also go to the Makefile and change the name of the project to your project name.
-Where ever you see "project" change it to your project name.
+Un jeu de tir à la première personne (FPS) inspiré de Wolfenstein 3D, développé en C avec la bibliothèque CSFML.
 
-For compilation of lib/my and lib/my_graphical make : ```make``` if you can't because it say "Nothing to be done for `all'" make : ```make re``` it should recompile as expected.
+## 📋 Description
 
-For clean make : ```make clean``` to clean the ```lib/my``` and for everywhere make : ```make fclean```
+Wolf3D est un projet EPITECH qui reproduit l'expérience classique de Wolfenstein 3D avec un moteur de raycasting. Le joueur navigue dans un labyrinthe en vue subjective, peut combattre des ennemis et utilise une lampe de poche pour explorer les zones sombres.
 
-For coding-style : ```make cs``` Warning : You have to recompile the ```lib/my``` before any knew compilation of your project
+## ✨ Fonctionnalités
 
-(For unit_tests (create and run them) make : ```make unit_tests & make tests_run```)
+- 🎯 **Moteur de raycasting** : Rendu 3D en temps réel
+- 🔫 **Système d'armes** : Tir avec animations
+- 💡 **Lampe de poche** : Éclairage dynamique avec effets visuels
+- 👾 **Ennemis** : Système de monstres dans le labyrinthe
+- 🎵 **Audio** : Musique de fond et effets sonores
+- 🎮 **Support manette** : Compatible avec les contrôleurs DualSense
+- 🗺️ **Multiples cartes** : Plusieurs niveaux disponibles
+- 📱 **Interface utilisateur** : Menus de navigation intuitifs
+
+## 🛠️ Prérequis
+
+- **Système d'exploitation** : Linux/Windows
+- **Compilateur** : GCC
+- **Bibliothèques** :
+  - CSFML (Simple and Fast Multimedia Library)
+  - libmy (bibliothèque personnalisée incluse)
+
+1. **Compiler le projet**
+
+```bash
+make
+```
+
+1. **Lancer le jeu**
+
+```bash
+./wolf3d
+```
+
+## 🎮 Contrôles
+
+### Clavier & Souris
+
+- **Z** : Avancer
+- **S** : Reculer  
+- **Q** : Strafer à gauche
+- **D** : Strafer à droite
+- **F** : Basculer la lampe de poche
+- **Souris** : Regarder autour
+- **Clic gauche** : Tirer
+- **ESC** : Mettre en pause
+
+### Manette DualSense
+
+- **Stick gauche** : Se déplacer
+- **Stick droit** : Regarder autour
+- **R2** : Tirer
+- **◻ (Carré)** : Basculer la lampe de poche
+- **Start** : Mettre en pause
+
+Pour afficher tous les contrôles :
+
+```bash
+./wolf3d -c
+./wolf3d --controls
+```
+
+## 📁 Structure du Projet
+
+```text
+Wolf3D/
+├── assets/                 # Ressources du jeu
+│   ├── fonts/             # Polices
+│   ├── map/               # Fichiers de cartes
+│   ├── music/             # Fichiers audio
+│   └── texture/           # Textures et sprites
+├── include/               # Fichiers d'en-tête
+├── lib/                   # Bibliothèques
+│   ├── my/               # Bibliothèque utilitaire
+│   └── my_graphical/     # Bibliothèque graphique
+├── src/                   # Code source principal
+│   ├── draw/             # Fonctions de rendu
+│   ├── init/             # Initialisation
+│   ├── input/            # Gestion des entrées
+│   ├── menu/             # Interfaces utilisateur
+│   └── weapon/           # Système d'armes
+└── tests/                # Tests unitaires
+```
+
+## 🎯 Options de Ligne de Commande
+
+```bash
+./wolf3d [OPTION]
+
+Options :
+  -h, --help      Afficher l'aide
+  -c, --controls  Afficher les contrôles
+  (aucune)        Démarrer le jeu
+```
+
+## 🔧 Commandes Make
+
+- `make` : Compiler le projet
+- `make re` : Recompiler entièrement
+- `make clean` : Nettoyer les fichiers objets
+- `make fclean` : Nettoyage complet
+- `make cs` : Vérifier le style de codage
+- `make unit_tests` : Créer les tests unitaires
+- `make tests_run` : Exécuter les tests
+
+## 🗺️ Format des Cartes
+
+Les cartes sont définies dans `assets/map/` avec le format suivant :
+
+- `0` (Ou espace selon les fichiers de map) : Espace vide
+- `1-9` : Différents types de murs
+- `M` : Position des monstres
+
+## 👥 Contributeurs
+
+- **Jean-Baptiste GOSSOT**
+- **Nathan CLAUDEL**
+- **Victor JOST**
+
+Epitech Nancy PGE 2029
+
+## 📄 Licence
+
+© JustWirelessInc. 2021-2029
+(Fausse licence pour le projet EPITECH)
+
+## 🐛 Problèmes Connus
+
+- F11 (plein écran) non fonctionnel
+- F4 (quitter) non fonctionnel
+- Le tir prendra automatiquement compte du dernier monstre si il y a plusieurs monstres dans la ligne de mire (celui le plus au fond pas le plus proche)
+
+## 🔗 Ressources Additionnelles
+
+Pour tester votre contrôleur :
+[Controller_Test](https://github.com/VictorTV57/Controller_Test.git)
